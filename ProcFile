@@ -1,1 +1,1 @@
-web: gunicorn mediate:app
+web:gunicorn mediate:app
