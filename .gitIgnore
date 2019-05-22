@@ -21,3 +21,4 @@ sdist/
 var/
 *.egg-info/
 .installed.cfg
+.vscode
