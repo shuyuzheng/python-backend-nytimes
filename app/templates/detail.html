@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>{{ movie }}</h1>
+  <ul>
+    {% for k, v in infos %}
+    <li>{{ k }} : {{ v }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
