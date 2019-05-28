@@ -1,6 +1,6 @@
 from flask import render_template, request, redirect, flash, url_for
 from app.forms import SearchForm
-from app.apis import get_movies
+from app.apis import get_movies, get_info
 from app import app
 
 @app.route('/')
@@ -29,9 +29,10 @@ def search():
 
         query = {k:v for k,v in data.items() if data[k] is not None}
         movies = get_movies(query)
-        return render_template('result.html', title ='Result', movies=movies)
+        return render_template('result.html', title='Result', movies=movies)
     return render_template('search.html', title='Search', form=form)
 
-@app.route('/detail')
-def detail():
-    return render_template('detail.html', title='Detail')
+@app.route('/detail/<moviename>')
+def detail(moviename):
+    infos = get_info(moviename)
+    return render_template('detail.html', title='Detail', infos=infos)

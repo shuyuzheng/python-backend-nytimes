@@ -4,7 +4,7 @@
   <h1>Movie search result</h1>
   <ul>
     {% for movie in movies %}
-    <li>{{ movie }}</li> 
-  {% endfor %}
+    <li><a href={{ url_for('detail', moviename=movie) }}>{{ movie }}</a></li> 
+    {% endfor %}
   </ul>
 {% endblock %}
